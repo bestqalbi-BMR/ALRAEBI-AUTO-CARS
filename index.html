@@ -1,0 +1,1419 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <meta name="theme-color" content="#050812">
+
+  <meta
+    name="description"
+    content="الراعبي أوتو كارز — معرض سيارات وتجربة شراء رقمية احترافية.">
+
+  <meta
+    name="robots"
+    content="index,follow">
+
+  <meta
+    property="og:title"
+    content="الراعبي أوتو كارز | ALRAEBI AUTO CARS">
+
+  <meta
+    property="og:description"
+    content="استعرض السيارات، قارن، احجز تجربة قيادة وتواصل مباشرة مع الراعبي أوتو كارز.">
+
+  <meta
+    property="og:type"
+    content="website">
+
+  <title>الراعبي أوتو كارز | ALRAEBI AUTO CARS</title>
+
+  <!-- ==============================
+       MAIN STYLE
+  =============================== -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ==============================
+       PWA
+  =============================== -->
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- ==============================
+       OPTIONAL API
+  =============================== -->
+  <script src="api.js"></script>
+</head>
+
+
+<body>
+
+<!-- =========================================================
+     TOP COMMAND
+========================================================= -->
+
+<section class="v11-command v11-glass">
+
+  <span class="v11-live">
+    <i></i>
+    صالة العرض مباشرة
+  </span>
+
+  <input
+    id="v11GlobalSearch"
+    type="search"
+    autocomplete="off"
+    placeholder="بحث ذكي: اسم السيارة، الماركة، الفئة..."
+    oninput="v11SmartSearch(this.value)">
+
+  <button
+    type="button"
+    class="btn"
+    onclick="
+      const x=document.getElementById('v11GlobalSearch');
+      if(x)x.value='';
+      if(typeof v11SmartSearch==='function')v11SmartSearch('');
+    ">
+    مسح
+  </button>
+
+</section>
+
+
+<!-- =========================================================
+     V20 KPI HEADER
+========================================================= -->
+
+<section class="wrap v11-kpis">
+
+  <div class="v11-kpi v11-glass">
+    <small>السيارات المعروضة</small>
+    <b data-v11-stat="cars">0</b>
+    <span class="v11-gold">● LIVE</span>
+  </div>
+
+  <div class="v11-kpi v11-glass">
+    <small>المقارنة</small>
+    <b id="v11CmpKpi">0</b>
+    <span>حد أقصى 3</span>
+  </div>
+
+  <div class="v11-kpi v11-glass">
+    <small>المفضلة</small>
+    <b id="v11FavKpi">0</b>
+    <span>محفوظة على جهازك</span>
+  </div>
+
+  <div class="v11-kpi v11-glass">
+    <small>الطلبات</small>
+    <b id="v11OrdKpi">0</b>
+    <span>طلباتك الحالية</span>
+  </div>
+
+</section>
+
+<div class="topline"></div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+  <div class="container nav">
+
+    <a
+      class="brand"
+      href="#"
+      aria-label="الراعبي أوتو كارز">
+
+      <div class="logo3d">
+        RA
+      </div>
+
+      <div>
+        <b>الراعبي أوتو كارز</b>
+        <small>ALRAEBI AUTO CARS</small>
+      </div>
+
+    </a>
+
+
+    <nav
+      class="navlinks"
+      aria-label="التنقل الرئيسي">
+
+      <a href="#carsSection">
+        السيارات
+      </a>
+
+      <a href="#services">
+        الخدمات
+      </a>
+
+      <a href="#about">
+        عن الراعبي
+      </a>
+
+      <a href="admin.html">
+        الإدارة
+      </a>
+
+    </nav>
+
+
+    <div class="actions">
+
+      <button
+        type="button"
+        class="iconbtn"
+        id="accountOpen"
+        aria-label="حسابي">
+        ♙
+      </button>
+
+      <button
+        type="button"
+        class="iconbtn"
+        id="compareOpen"
+        aria-label="المقارنة">
+        ⇄
+      </button>
+
+      <button
+        type="button"
+        class="iconbtn"
+        id="favOpen"
+        aria-label="المفضلة">
+
+        ♡
+
+        <i
+          class="badge"
+          id="favCount">
+          0
+        </i>
+
+      </button>
+
+      <button
+        type="button"
+        class="iconbtn"
+        id="reqOpen"
+        aria-label="طلباتي">
+
+        ▣
+
+        <i
+          class="badge"
+          id="reqCount">
+          0
+        </i>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main>
+
+
+<!-- =========================================================
+     MARQUEE
+========================================================= -->
+
+<div class="marquee">
+
+  <div>
+    ALRAEBI AUTO CARS ✦
+    PREMIUM MOTORS ✦
+    4×4 ✦
+    ELECTRIC ✦
+    2026 ✦
+    EXPERIENCE THE DIFFERENCE ✦
+    ALRAEBI AUTO CARS ✦
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="container hero hero-v10">
+
+  <div class="hero-copy">
+
+    <div class="eyebrow">
+      DRIVE THE FUTURE • 2026
+    </div>
+
+    <h1 class="mega">
+      سيارات تصنع<br>
+      <i>الفرق.</i>
+    </h1>
+
+    <p>
+      الراعبي أوتو كارز — تجربة سيارات حديثة
+      بتصميم فاخر، بحث ذكي، مقارنة،
+      حجز تجربة قيادة وطلب مباشر عبر واتساب.
+    </p>
+
+
+    <div class="chips">
+
+      <span class="chip">
+        ⚡ كهربائية
+      </span>
+
+      <span class="chip">
+        ◈ 4×4
+      </span>
+
+      <span class="chip">
+        ◉ Premium
+      </span>
+
+      <span class="chip">
+        ✦ 3D Experience
+      </span>
+
+    </div>
+
+
+    <div class="hero-buttons">
+
+      <a
+        class="btn primary"
+        href="#carsSection">
+        استكشف السيارات
+      </a>
+
+      <button
+        type="button"
+        class="btn"
+        onclick="finance()">
+        حاسبة التمويل
+      </button>
+
+      <button
+        type="button"
+        class="btn red"
+        onclick="wa('مرحباً الراعبي أوتو كارز، أريد الاستفسار عن السيارات المتوفرة والأسعار.')">
+        تواصل واتساب
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       3D HERO
+  ======================================================== -->
+
+  <div class="stage">
+
+    <div class="orb a"></div>
+    <div class="orb b"></div>
+
+    <div class="ring"></div>
+    <div class="ring r2"></div>
+
+    <img
+      class="hero-car"
+      src="images/car-1.jpg"
+      alt="سيارة الراعبي أوتو كارز"
+      loading="eager">
+
+    <div class="specfloat sf1">
+      ⚡ قيادة كهربائية<br>
+      <b>4×4</b>
+    </div>
+
+    <div class="specfloat sf2">
+      ✦ Premium<br>
+      <b>2026</b>
+    </div>
+
+    <div class="specfloat sf3">
+      RA<br>
+      <b>ALRAEBI</b>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURES
+========================================================= -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="kpis">
+
+      <div class="kpi">
+        <b>01</b>
+        <span>بحث ذكي</span>
+      </div>
+
+      <div class="kpi">
+        <b>02</b>
+        <span>مقارنة</span>
+      </div>
+
+      <div class="kpi">
+        <b>03</b>
+        <span>مفضلة</span>
+      </div>
+
+      <div class="kpi">
+        <b>04</b>
+        <span>تجربة قيادة</span>
+      </div>
+
+      <div class="kpi">
+        <b>05</b>
+        <span>تمويل</span>
+      </div>
+
+      <div class="kpi">
+        <b>06</b>
+        <span>واتساب</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<section class="section">
+
+  <div class="container stats">
+
+    <div class="stat">
+      <b>8+</b>
+      <span>سيارات معروضة</span>
+    </div>
+
+    <div class="stat">
+      <b>24/7</b>
+      <span>استقبال الاستفسارات</span>
+    </div>
+
+    <div class="stat">
+      <b>4×4</b>
+      <span>تجهيزات مختارة</span>
+    </div>
+
+    <div class="stat">
+      <b>2026</b>
+      <span>أحدث موديلات</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     QUICK COMMAND
+========================================================= -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="command">
+
+      <span aria-hidden="true">⌘</span>
+
+      <input
+        type="search"
+        placeholder="وصول سريع: السيارات، المفضلة، المقارنة، التمويل..."
+        onkeydown="
+          if(event.key==='Enter'){
+            const s=document.querySelector('#carsSection');
+            if(s)s.scrollIntoView({behavior:'smooth'});
+          }
+        ">
+
+      <button
+        type="button"
+        class="btn"
+        onclick="showFav()">
+        ♡
+      </button>
+
+      <button
+        type="button"
+        class="btn"
+        onclick="compareView()">
+        ⇄
+      </button>
+
+      <button
+        type="button"
+        class="btn"
+        onclick="finance()">
+        ٪
+      </button>
+
+    </div>
+
+
+    <div class="quick">
+
+      <div class="stat">
+        <b>⚡</b>
+        <span>كهربائية</span>
+      </div>
+
+      <div class="stat">
+        <b>◈</b>
+        <span>4×4</span>
+      </div>
+
+      <div class="stat">
+        <b>✦</b>
+        <span>Premium</span>
+      </div>
+
+      <div class="stat">
+        <b>24/7</b>
+        <span>استفسارات</span>
+      </div>
+
+      <div class="stat">
+        <b>2026</b>
+        <span>موديلات حديثة</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CARS
+========================================================= -->
+
+<section
+  class="section"
+  id="carsSection">
+
+  <div class="container">
+
+    <div class="sectionhead">
+
+      <div>
+
+        <div class="eyebrow">
+          OUR SHOWROOM
+        </div>
+
+        <h2>
+          اختَر سيارتك
+        </h2>
+
+        <p class="muted">
+          ابحث، قارن، أضف للمفضلة أو اطلب مباشرة.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <span class="badge-live">
+          <span class="dot"></span>
+          LIVE SHOWROOM
+        </span>
+
+        <button
+          type="button"
+          class="btn"
+          onclick="compareView()">
+          مقارنة ⇄
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="aihint">
+      ✦ المساعد الذكي:
+      اكتب مثلاً «بيك أب كهربائية 4×4»
+      ثم اضغط Enter للبحث.
+    </div>
+
+
+    <!-- FILTERS -->
+
+    <div class="filters">
+
+      <input
+        id="q"
+        type="search"
+        class="field"
+        autocomplete="off"
+        placeholder="🔎 ابحث عن سيارة أو شركة...">
+
+      <select
+        id="brand"
+        class="field">
+
+        <option value="">
+          كل الشركات
+        </option>
+
+      </select>
+
+
+      <select
+        id="type"
+        class="field">
+
+        <option value="">
+          كل الأنواع
+        </option>
+
+      </select>
+
+
+      <select
+        id="sort"
+        class="field">
+
+        <option value="">
+          ترتيب افتراضي
+        </option>
+
+        <option value="name">
+          حسب الاسم
+        </option>
+
+        <option value="year">
+          الأحدث
+        </option>
+
+        <option value="price">
+          السعر
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div
+      id="smartResult"
+      class="muted"
+      style="font-size:11px;margin:8px 0">
+    </div>
+
+
+    <!-- V20 RENDER TARGET -->
+
+    <div
+      id="cars"
+      class="carsgrid">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section
+  class="section"
+  id="services">
+
+  <div class="container">
+
+    <div class="sectionhead">
+
+      <div>
+
+        <div class="eyebrow">
+          SERVICES
+        </div>
+
+        <h2>
+          خدمات ذكية
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="stats">
+
+      <button
+        type="button"
+        class="stat"
+        onclick="finance()">
+
+        <b>٪</b>
+
+        <span>
+          حاسبة التمويل والأقساط
+        </span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="stat"
+        onclick="testDrive('car-1')">
+
+        <b>↗</b>
+
+        <span>
+          حجز تجربة قيادة
+        </span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="stat"
+        onclick="compareView()">
+
+        <b>⇄</b>
+
+        <span>
+          مقارنة حتى 3 سيارات
+        </span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="stat"
+        onclick="wa('أريد معرفة السيارات المتوفرة والأسعار والعروض الحالية.')">
+
+        <b>☏</b>
+
+        <span>
+          استفسار واتساب مباشر
+        </span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+  class="section"
+  id="about">
+
+  <div class="container">
+
+    <div class="stat">
+
+      <div class="eyebrow">
+        ALRAEBI AUTO CARS
+      </div>
+
+      <h2>
+        معرضك، بتجربة رقمية مختلفة.
+      </h2>
+
+      <p class="muted">
+        واجهة سريعة ومتجاوبة مع الهاتف،
+        مصممة لتعرض السيارات بصورة جذابة
+        وتسهّل الوصول إلى المعلومات
+        واتخاذ قرار الشراء.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CUSTOMER / CLOUD STATUS
+========================================================= -->
+
+<section
+  class="rac-v19-banner">
+
+  <div>
+
+    <span>
+      ● CLOUD PRO V20
+    </span>
+
+    <h2>
+      المعرض يعمل معك أينما كنت
+    </h2>
+
+    <p>
+      إدارة السيارات والطلبات والعملاء
+      من لوحة الإدارة عند تشغيل Backend حقيقي.
+    </p>
+
+  </div>
+
+
+  <div class="rac-v19-actions">
+
+    <button
+      type="button"
+      class="btn primary"
+      onclick="v19CustomerLogin()">
+      دخول العميل
+    </button>
+
+    <button
+      type="button"
+      class="btn"
+      onclick="v19CustomerOrders()">
+      طلباتي
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     LEAD CTA
+========================================================= -->
+
+<section
+  class="wrap v11-glass"
+  style="
+    margin:30px auto;
+    padding:24px;
+    border-radius:26px;
+    text-align:center">
+
+  <div class="v11-live">
+    جاهزون لخدمتك
+  </div>
+
+  <h2>
+    اختر سيارتك ودع الباقي علينا
+  </h2>
+
+  <p style="opacity:.7">
+    استفسار، تجربة قيادة، تمويل أو طلب شراء —
+    أرسل طلبك من هاتفك.
+  </p>
+
+  <button
+    type="button"
+    class="btn primary"
+    onclick="v11OpenLead()">
+    ابدأ طلبك الآن
+  </button>
+
+</section>
+
+
+<!-- =========================================================
+     CUSTOMER BOX
+========================================================= -->
+
+<section
+  id="v13CustomerBox"
+  class="v13-shell v12-panel"
+  style="
+    padding:24px;
+    margin:24px auto;
+    text-align:center">
+
+  <span class="v13-online">
+    <i></i>
+    V20 CUSTOMER
+  </span>
+
+  <h2>
+    حساب العميل والطلبات
+  </h2>
+
+  <p style="opacity:.7">
+    أنشئ حساباً من هاتفك
+    لتسهيل متابعة طلباتك وطلبات السيارات.
+  </p>
+
+
+  <div
+    class="v13-actions"
+    style="justify-content:center">
+
+    <button
+      type="button"
+      class="btn primary"
+      onclick="v13CustomerRegisterPrompt()">
+      إنشاء حساب
+    </button>
+
+    <button
+      type="button"
+      class="btn"
+      onclick="v13CustomerLoginPrompt()">
+      تسجيل الدخول
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PUBLIC STATUS
+========================================================= -->
+
+<section
+  id="v14PublicStatus"
+  class="v13-shell v14-cloud">
+
+  <div>
+
+    <b>
+      ☁️ ALRAEBI ONLINE
+    </b>
+
+    <br>
+
+    <small>
+      جاهز للعمل محلياً أو مع Backend حقيقي
+    </small>
+
+  </div>
+
+  <span id="v14PublicState">
+    وضع المعرض
+  </span>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL WHATSAPP CTA
+========================================================= -->
+
+<section
+  class="wrap v11-glass"
+  style="
+    margin:30px auto 100px;
+    padding:25px;
+    border-radius:26px;
+    text-align:center">
+
+  <div class="v11-live">
+    ☎ خدمة العملاء
+  </div>
+
+  <h2>
+    تواصل مباشرة مع الراعبي أوتو كارز
+  </h2>
+
+  <p style="opacity:.7">
+    للاستفسار عن السيارات والأسعار والعروض
+    وحجز تجربة القيادة.
+  </p>
+
+  <button
+    type="button"
+    class="btn primary"
+    onclick="wa('مرحباً الراعبي أوتو كارز، أريد الاستفسار عن السيارات المتوفرة والأسعار والعروض.')">
+
+    💬 تواصل عبر واتساب
+
+  </button>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="container footergrid">
+
+    <div>
+
+      <h3>
+        الراعبي أوتو كارز
+      </h3>
+
+      <p>
+        ALRAEBI AUTO CARS
+      </p>
+
+      <p>
+        سيارات • خدمات • تجربة رقمية
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <b>
+        روابط
+      </b>
+
+      <p>
+        <a href="#carsSection">
+          السيارات
+        </a>
+      </p>
+
+      <p>
+        <a href="#services">
+          الخدمات
+        </a>
+      </p>
+
+      <p>
+        <a href="#about">
+          عن الراعبي
+        </a>
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <b>
+        تواصل
+      </b>
+
+      <p>
+
+        <button
+          type="button"
+          class="btn primary"
+          onclick="wa('مرحباً الراعبي أوتو كارز، أريد التواصل معكم.')">
+
+          واتساب
+
+        </button>
+
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     MOBILE NAV
+========================================================= -->
+
+<div class="mobileNav">
+
+  <a href="#">
+    <b>⌂</b>
+    الرئيسية
+  </a>
+
+  <a href="#carsSection">
+    <b>🚘</b>
+    السيارات
+  </a>
+
+  <a href="#services">
+    <b>✦</b>
+    الخدمات
+  </a>
+
+  <a href="admin.html">
+    <b>⚙</b>
+    الإدارة
+  </a>
+
+</div>
+
+
+<!-- =========================================================
+     COMPARE BAR
+========================================================= -->
+
+<div
+  id="compareBar"
+  class="comparebar">
+
+  <div
+    id="compareMini"
+    class="comparemini">
+  </div>
+
+  <button
+    type="button"
+    class="btn primary"
+    onclick="compareView()">
+    قارن الآن
+  </button>
+
+  <button
+    type="button"
+    class="btn"
+    onclick="
+      if(typeof compare!=='undefined'){
+        compare=[];
+      }
+
+      if(typeof set==='function' &&
+         typeof STORE_KEYS!=='undefined'){
+        set(STORE_KEYS.compare, []);
+      }
+
+      if(typeof render==='function'){
+        render();
+      }
+    ">
+    ×
+  </button>
+
+</div>
+
+
+<!-- =========================================================
+     GLOBAL MODAL
+========================================================= -->
+
+<div
+  id="modal"
+  class="modal"
+  aria-hidden="true">
+
+  <div
+    class="modalbox"
+    id="modalContent">
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+  id="toast"
+  class="toast"
+  aria-live="polite">
+</div>
+
+
+<!-- =========================================================
+     DATA / CLOUD / APP
+     
+     الترتيب مهم:
+     data.js
+     cloud-v15.js
+     app.js
+     v19.js
+     cloud-master.js
+========================================================= -->
+
+<script src="data.js"></script>
+
+<script src="cloud-v15.js"></script>
+
+<script src="app.js"></script>
+
+<script src="v19.js"></script>
+
+<script src="cloud-master.js"></script>
+
+
+<!-- =========================================================
+     CUSTOMER HELPERS
+========================================================= -->
+
+<script>
+
+function v13CustomerRegisterPrompt(){
+
+  const name = prompt("الاسم");
+
+  if(!name) return;
+
+
+  const phone = prompt("رقم الهاتف");
+
+  if(!phone) return;
+
+
+  const password = prompt("كلمة المرور");
+
+  if(!password) return;
+
+
+  if(typeof v13Register === "function"){
+
+    v13Register(
+      name.trim(),
+      phone.trim(),
+      password
+    );
+
+  }else{
+
+    alert("نظام تسجيل العملاء غير جاهز حالياً.");
+
+  }
+
+}
+
+
+function v13CustomerLoginPrompt(){
+
+  const phone = prompt("رقم الهاتف");
+
+  if(!phone) return;
+
+
+  const password = prompt("كلمة المرور");
+
+  if(!password) return;
+
+
+  if(typeof v13CustomerLogin === "function"){
+
+    v13CustomerLogin(
+      phone.trim(),
+      password
+    );
+
+  }else{
+
+    alert("نظام تسجيل الدخول غير جاهز حالياً.");
+
+  }
+
+}
+
+</script>
+
+
+<!-- =========================================================
+     V20 SAFE INIT
+     
+     لا ننشئ wa هنا.
+     لا ننشئ render هنا.
+     app.js هو المسؤول.
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  /*
+   * مزامنة فلاتر السيارات مع محرك V20
+   */
+
+  const q =
+    document.getElementById("q");
+
+  const brand =
+    document.getElementById("brand");
+
+  const type =
+    document.getElementById("type");
+
+  const sort =
+    document.getElementById("sort");
+
+
+  function syncRender(){
+
+    if(typeof render === "function"){
+      render();
+    }
+
+  }
+
+
+  if(q){
+
+    q.addEventListener(
+      "input",
+      function(){
+
+        if(typeof smartSearch === "function"){
+          smartSearch(this.value);
+        }else{
+          syncRender();
+        }
+
+      }
+    );
+
+    q.addEventListener(
+      "keydown",
+      function(e){
+
+        if(e.key === "Enter"){
+
+          if(typeof smartSearch === "function"){
+            smartSearch(this.value);
+          }else{
+            syncRender();
+          }
+
+        }
+
+      }
+    );
+
+  }
+
+
+  if(brand){
+
+    brand.addEventListener(
+      "change",
+      syncRender
+    );
+
+  }
+
+
+  if(type){
+
+    type.addEventListener(
+      "change",
+      syncRender
+    );
+
+  }
+
+
+  if(sort){
+
+    sort.addEventListener(
+      "change",
+      syncRender
+    );
+
+  }
+
+
+  /*
+   * تحديث الإحصائيات إذا كان V11 موجوداً.
+   */
+
+  try{
+
+    if(typeof V11 !== "undefined" &&
+       typeof V11.stats === "function"){
+
+      const stats =
+        V11.stats();
+
+      const cmp =
+        document.getElementById("v11CmpKpi");
+
+      const fav =
+        document.getElementById("v11FavKpi");
+
+      const ord =
+        document.getElementById("v11OrdKpi");
+
+
+      if(cmp)
+        cmp.textContent =
+          stats.cmp ?? 0;
+
+      if(fav)
+        fav.textContent =
+          stats.fav ?? 0;
+
+      if(ord)
+        ord.textContent =
+          stats.orders ?? 0;
+
+    }
+
+  }catch(e){}
+
+
+});
+
+</script>
+
+
+<!-- =========================================================
+     SERVICE WORKER
+========================================================= -->
+
+<script>
+
+if("serviceWorker" in navigator){
+
+  window.addEventListener(
+    "load",
+    function(){
+
+      navigator.serviceWorker
+        .register("sw.js")
+        .catch(function(){});
+
+    }
+  );
+
+}
+
+</script>
+
+</body>
+</html>

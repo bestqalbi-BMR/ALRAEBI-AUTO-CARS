@@ -1,0 +1,10 @@
+services:
+  alraebi:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file: .env
+    volumes:
+      - ./server/data:/app/server/data
+      - ./server/uploads:/app/server/uploads
+    restart: unless-stopped
